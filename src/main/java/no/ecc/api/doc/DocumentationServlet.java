@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Path;
 
 import no.ecc.api.doc.annotations.Api;
+import no.ecc.api.doc.annotations.ApiIgnore;
 
 import org.apache.log4j.Logger;
 import org.reflections.Reflections;
@@ -137,6 +138,11 @@ public class DocumentationServlet extends HttpServlet {
                    
                     
                     String name = a.annotationType().getSimpleName();
+                    
+                    if (name.equalsIgnoreCase(ApiIgnore.class.getSimpleName())) {
+                    	continue;
+                    }
+                    
                     String httpMethods = "GET,POST,PUT,OPTION,DELETE";
                     if (httpMethods.contains(name)) {
                         out.name("method").value(name);
