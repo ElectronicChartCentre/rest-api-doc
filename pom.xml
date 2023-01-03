@@ -6,7 +6,7 @@
 	<name>ECC Automatic REST API Documentation </name>
 
 	<properties>
-		<log4j.version>2.17.0</log4j.version>
+		<log4j.version>2.17.1</log4j.version>
 		<jersey.version>2.16</jersey.version>
 	</properties>
 
